@@ -41,13 +41,45 @@ main {
 }
 
 #newNoteBtn {
-    --bs-btn-bg: #ffc972 !important;
-    --bs-btn-hover-bg: #000000 !important;
+    --bs-btn-bg: #14213D !important;
+    /* --bs-btn-hover-bg: #000000 !important; */
     color: #FFFFFF;
+
+    &:hover {
+        color: #000000;
+        background-color: #ffc972;
+    }
+
+    &:active {
+        border-color: #14213D !important;
+        color: #14213D !important;
+        background-color: #FFFFFF;
+    }
+}
+
+#newFolderBtn {
+    --bs-btn-bg: #14213D !important;
+    /* --bs-btn-hover-bg: #000000 !important; */
+    color: #FFFFFF;
+
+    &:hover {
+        color: #000000;
+        background-color: #ffc972;
+    }
+
+    &:active {
+        border-color: #14213D !important;
+        background-color: #FFFFFF;
+        color: #14213D !important;
+    }
 }
 
 #mainContent {
     background-color: #ffffff;
+}
+
+.nav {
+    flex-wrap: unset !important;
 }
 
 .nav-link {
@@ -98,6 +130,22 @@ main {
     --bs-btn-bg: #14213D !important;
     --bs-btn-hover-bg: #ff5050 !important;
     color: #FFFFFF !important;
+
+    &:active {
+        border-color: #14213D !important;
+        color: #14213D !important;
+    }
+}
+
+.save-btn {
+    --bs-btn-bg: #14213D !important;
+    --bs-btn-hover-bg: #2b6af2 !important;
+    color: #FFFFFF !important;
+
+    &:active {
+        border-color: #14213D !important;
+        color: #14213D !important;
+    }
 }
 
 textarea {

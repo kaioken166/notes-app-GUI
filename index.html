@@ -21,22 +21,23 @@
     <div class="d-flex flex-nowrap" style="height: 100%">
 
         <!-- Sidebar section -->
-        <div class="flex-shrink-0 p-3 border-end" id="left-sidebar">
+        <div class="d-flex flex-column flex-shrink-0 p-3 border-end" id="left-sidebar">
 
-            <a href="#"
-                class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-                <i class="bi bi-pen me-2"></i>
-                <span class="fs-5 fw-semibold">Notes</span>
-            </a>
-            <div class="input-group flex-nowrap pb-3 mb-3 border-bottom">
-                <span class="input-group-text shadow-sm"><i class="bi bi-search"></i></span>
-                <input type="text" class="form-control shadow-sm" placeholder="Search" aria-label="SearchInput"
-                    aria-describedby="addon-wrapping">
+            <div class="d-flex justify-content-between pb-3 mb-3 border-bottom">
+                <a href="/index.html"
+                    class="d-flex align-items-center link-body-emphasis text-decoration-none">
+                    <i class="bi bi-pen me-2"></i>
+                    <span class="fs-5 fw-semibold">Notes</span>
+                </a>
+                <button class="btn shadow-sm" id="newFolderBtn" type="submit"><i class="bi bi-folder-plus"></i></button>
             </div>
 
+
             <!-- Folder section -->
-            <ul class="nav nav-pills flex-column border-bottom scrollarea mb-3" aria-orientation="vertical"
-                role="tablist" style="height: 77%">
+            <ul class="nav nav-pills flex-shrink-1 d-flex flex-column scrollarea mb-3" aria-orientation="vertical"
+                role="tablist" style="height: 100%;">
+
+                <!-- Đổ data vào đây -->
                 <li class="nav-item nav-link active link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
                     data-bs-target="#listGroup1" aria-controls="listGroup1" aria-selected="true">
                     <i class="bi bi-folder2 me-3"></i>
@@ -47,7 +48,6 @@
                     <i class="bi bi-folder2 me-3"></i>
                     Folder 2
                 </li>
-
                 <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
                     data-bs-target="#listGroup3" aria-controls="listGroup3" aria-selected="false" tabindex="-1">
                     <i class="bi bi-folder2 me-3"></i>
@@ -55,7 +55,7 @@
                 </li>
             </ul>
             <!-- profile -->
-            <div class="dropdown">
+            <div class="dropdown mt-auto flex-shrink-1 border-top py-3">
                 <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <strong>Profile</strong>
@@ -73,14 +73,18 @@
 
         <!-- List items section -->
         <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary border-end" id="listBar">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between border-bottom">
                 <a href="#" class="d-flex align-items-center p-3 link-body-emphasis text-decoration-none nocursor">
                     <i class="bi bi-journal me-2"></i>
                     <span class="fs-5 fw-semibold">Notes List</span>
                 </a>
                 <button class="btn my-3 mx-3 shadow-sm" id="newNoteBtn" type="submit"><i
                         class="bi bi-file-earmark-plus"></i></button>
-
+            </div>
+            <div class="input-group flex-nowrap p-3">
+                <span class="input-group-text shadow-sm"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control shadow-sm" placeholder="Search" aria-label="SearchInput"
+                    aria-describedby="addon-wrapping">
             </div>
 
             <!-- List items -->
@@ -146,7 +150,7 @@
         <div class="d-flex flex-column flex-grow-1 position-relative tab-content" id="mainContent">
 
             <!-- Trống -->
-            <div class="d-flex justify-content-center position-absolute top-50 start-50 translate-middle" id="note0">
+            <div class="justify-content-center position-absolute top-50 start-50 translate-middle" id="note0">
                 <div class="align-self-center text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#bdbdbd"
                         class="bi bi-file-earmark-text" viewBox="0 0 16 16">
@@ -170,7 +174,9 @@
                 <div class="d-flex justify-content-between">
                     <input type="text" class="form-control form-control-lg no-border" id="title1-folder1" placeholder=""
                         value="github command-line">
-                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note1-folder1" type="button"><i
+                    <button class="btn my-3 shadow-sm save-btn me-2" id="save-note1-folder1" type="button"><i
+                            class="bi bi-floppy"></i></button>
+                    <button class="btn my-3 shadow-sm trash-btn me-2" id="delete-note1-folder1" type="button"><i
                             class="bi bi-trash3"></i></button>
                 </div>
                 <hr class="mx-3" style="border-width: 0.5px;">

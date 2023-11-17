@@ -36,7 +36,7 @@ const removableElements = document.getElementById('note0')
 for (var i = 0; i < toggleableElements.length; i++) {
 
     toggleableElements[i].addEventListener('click', function () {
-        console.log(1)
-        removableElements.remove()
+        // console.log(1)
+        removableElements.style.display = 'none';
     });
 }
