@@ -17,15 +17,14 @@
     <link rel="shortcut icon" type="image/x-icon" href="font/bookmark-star.svg" />
 </head>
 
-<body style="height: 100%">
+<body style="height: 100%" onload="onPageLoad()">
     <div class="d-flex flex-nowrap" style="height: 100%">
 
         <!-- Sidebar section -->
         <div class="d-flex flex-column flex-shrink-0 p-3 border-end" id="left-sidebar">
 
             <div class="d-flex justify-content-between pb-3 mb-3 border-bottom">
-                <a href="/index.html"
-                    class="d-flex align-items-center link-body-emphasis text-decoration-none">
+                <a href="/index.html" class="d-flex align-items-center link-body-emphasis text-decoration-none">
                     <i class="bi bi-pen me-2"></i>
                     <span class="fs-5 fw-semibold">Notes</span>
                 </a>
@@ -34,25 +33,11 @@
 
 
             <!-- Folder section -->
-            <ul class="nav nav-pills flex-shrink-1 d-flex flex-column scrollarea mb-3" aria-orientation="vertical"
-                role="tablist" style="height: 100%;">
+            <ul class="nav nav-pills flex-shrink-1 d-flex flex-column scrollarea mb-3" id="folderList"
+                aria-orientation="vertical" role="tablist" style="height: 100%;">
 
                 <!-- Đổ data vào đây -->
-                <li class="nav-item nav-link active link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
-                    data-bs-target="#listGroup1" aria-controls="listGroup1" aria-selected="true">
-                    <i class="bi bi-folder2 me-3"></i>
-                    Folder 1
-                </li>
-                <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
-                    data-bs-target="#listGroup2" aria-controls="listGroup2" aria-selected="false" tabindex="-1">
-                    <i class="bi bi-folder2 me-3"></i>
-                    Folder 2
-                </li>
-                <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
-                    data-bs-target="#listGroup3" aria-controls="listGroup3" aria-selected="false" tabindex="-1">
-                    <i class="bi bi-folder2 me-3"></i>
-                    Folder 3
-                </li>
+
             </ul>
             <!-- profile -->
             <div class="dropdown mt-auto flex-shrink-1 border-top py-3">
@@ -78,7 +63,7 @@
                     <i class="bi bi-journal me-2"></i>
                     <span class="fs-5 fw-semibold">Notes List</span>
                 </a>
-                <button class="btn my-3 mx-3 shadow-sm" id="newNoteBtn" type="submit"><i
+                <button class="btn my-3 mx-3 shadow-sm" id="newNoteBtn" type="button"><i
                         class="bi bi-file-earmark-plus"></i></button>
             </div>
             <div class="input-group flex-nowrap p-3">
@@ -88,61 +73,10 @@
             </div>
 
             <!-- List items -->
-            <div class="list-group list-group-flush scrollarea tab-content">
+            <div class="list-group list-group-flush scrollarea tab-content" id="parentList">
 
-                <!-- Folder 1 -->
-                <div class="tab-pane fade nocursor show active" role="tabpanel" tabindex="0"
-                    aria-labelledby="listGroup1-tab" id="listGroup1" role="tablist">
+                <!-- data here -->
 
-                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-                        data-bs-target="#note1-folder1" aria-controls="note1-folder1" aria-selected="false">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">github command-line</strong>
-                            <small>Wed</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Clone ...</div>
-                    </div>
-
-                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-                        data-bs-target="#note2-folder1" aria-controls="note2-folder1" aria-selected="false"
-                        tabindex="-1">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Insert title here</strong>
-                            <small>Tues</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content here</div>
-                    </div>
-
-                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-                        data-bs-target="#note3-folder1" aria-controls="note3-folder1" aria-selected="false"
-                        tabindex="-1">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Insert title here</strong>
-                            <small>Mon</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content here</div>
-                    </div>
-                </div>
-
-                <!-- Folder 2 -->
-                <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup2-tab"
-                    id="listGroup2">
-
-                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-                        data-bs-target="#note1-folder2" aria-controls="note3-folder1" aria-selected="false"
-                        tabindex="-1">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Họp Nhóm Proiect XYZ</strong>
-                            <small>Wed</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Hôm nay, chúng ta ...</div>
-                    </div>
-                </div>
-                <!-- Folder 3 -->
-                <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup3-tab"
-                    id="listGroup3">
-
-                </div>
             </div>
         </div>
 
@@ -168,15 +102,15 @@
             </div>
 
             <!-- div chứa thông nội dung -->
-            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-folder1" role="tabpanel" tabindex="0">
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-listGroup1" role="tabpanel" tabindex="0">
 
                 <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
                 <div class="d-flex justify-content-between">
-                    <input type="text" class="form-control form-control-lg no-border" id="title1-folder1" placeholder=""
-                        value="github command-line">
-                    <button class="btn my-3 shadow-sm save-btn me-2" id="save-note1-folder1" type="button"><i
+                    <input type="text" class="form-control form-control-lg no-border" id="title1-listGroup1"
+                        placeholder="" value="github command-line">
+                    <button class="btn my-3 shadow-sm save-btn me-2" id="save-note1-listGroup1" type="button"><i
                             class="bi bi-floppy"></i></button>
-                    <button class="btn my-3 shadow-sm trash-btn me-2" id="delete-note1-folder1" type="button"><i
+                    <button class="btn my-3 shadow-sm trash-btn me-2" id="delete-note1-listGroup1" type="button"><i
                             class="bi bi-trash3"></i></button>
                 </div>
                 <hr class="mx-3" style="border-width: 0.5px;">
@@ -187,17 +121,17 @@
                 <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
                 <!-- Nội dung ghi chú -->
                 <textarea class="form-control flex-grow-1 no-border p-3" placeholder=""
-                    id="content1-folder1">Clone a Specific Branch: git clone -b</textarea>
+                    id="content1-listGroup1">Clone a Specific Branch: git clone -b</textarea>
             </div>
 
             <!-- div chứa thông nội dung -->
-            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note2-folder1" role="tabpanel" tabindex="0">
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note2-listGroup1" role="tabpanel" tabindex="0">
 
                 <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
                 <div class="d-flex justify-content-between">
-                    <input type="text" class="form-control form-control-lg no-border" id="title2-folder1" placeholder=""
-                        value="Insert title here">
-                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note2-folder1" type="button"><i
+                    <input type="text" class="form-control form-control-lg no-border" id="title2-listGroup1"
+                        placeholder="" value="Insert title here">
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note2-listGroup1" type="button"><i
                             class="bi bi-trash3"></i></button>
                 </div>
                 <hr class="mx-3" style="border-width: 0.5px;">
@@ -208,17 +142,17 @@
                 <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
                 <!-- Nội dung ghi chú -->
                 <textarea class="form-control no-border p-3" placeholder=""
-                    id="content2-folder1">Insert data from database here</textarea>
+                    id="content2-listGroup1">Insert data from database here</textarea>
             </div>
 
             <!-- div chứa thông nội dung -->
-            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note3-folder1" role="tabpanel" tabindex="0">
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note3-listGroup1" role="tabpanel" tabindex="0">
 
                 <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
                 <div class="d-flex justify-content-between">
-                    <input type="text" class="form-control form-control-lg no-border" id="title2-folder1"
+                    <input type="text" class="form-control form-control-lg no-border" id="title2-listGroup1"
                         placeholder="Untitled">
-                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note3-folder1" type="button"><i
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note3-listGroup1" type="button"><i
                             class="bi bi-trash3"></i></button>
                 </div>
                 <hr class="mx-3" style="border-width: 0.5px;">
@@ -228,18 +162,18 @@
                 <!-- Thuộc folder ? -->
                 <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
                 <!-- Nội dung ghi chú -->
-                <textarea class="form-control no-border p-3" placeholder="" id="content3-folder1"></textarea>
+                <textarea class="form-control no-border p-3" placeholder="" id="content3-listGroup1"></textarea>
             </div>
 
 
             <!-- div chứa thông nội dung1 folder 2-->
-            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-folder2" role="tabpanel" tabindex="0">
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-listGroup2" role="tabpanel" tabindex="0">
 
                 <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
                 <div class="d-flex justify-content-between">
-                    <input type="text" class="form-control form-control-lg no-border" id="title2-folder1" placeholder=""
-                        value="Họp Nhóm Proiect XYZ">
-                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note1-folder2" type="button"><i
+                    <input type="text" class="form-control form-control-lg no-border" id="title1-listGroup2"
+                        placeholder="" value="Họp Nhóm Proiect XYZ">
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note1-listGroup2" type="button"><i
                             class="bi bi-trash3"></i></button>
                 </div>
                 <hr class="mx-3" style="border-width: 0.5px;">
@@ -250,12 +184,14 @@
                 <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 2</h6>
                 <!-- Nội dung ghi chú -->
                 <textarea class="form-control no-border p-3" placeholder=""
-                    id="content1-folder2">Hôm nay, chúng ta đã thảo luận về tiến độ dự án, đặt ra các mục tiêu cụ thể cho tuần tới và phân công công việc chi tiết. Cần tất cả mọi người chuẩn bị báo cáo tiến độ cho cuộc họp tiếp theo.</textarea>
+                    id="content1-listGroup2">Hôm nay, chúng ta đã thảo luận về tiến độ dự án, đặt ra các mục tiêu cụ thể cho tuần tới và phân công công việc chi tiết. Cần tất cả mọi người chuẩn bị báo cáo tiến độ cho cuộc họp tiếp theo.</textarea>
             </div>
         </div>
     </div>
     <script src="js/index.js" async defer></script>
     <script src="js/bootstrap.bundle.min.js" async defer></script>
+    <script src="js/model.js" async defer></script>
+
 </body>
 
 </html>

@@ -12,148 +12,57 @@
 </head>
 
 <body>
-    <div class="container-fluid d-flex">
-        <!-- List of Folders -->
-        <ul class="nav nav-pills flex-column border-bottom scrollarea mb-3" style="height: 78%" id="folderList">
-            <!-- Add your folder items here -->
-            <li class="nav-item">
-                <a href="#" class="nav-link active link-body-emphasis" onclick="showNotes(3)">
-                    <!-- Adjust the number of notes accordingly -->
-                    <i class="bi bi-folder2 me-3"></i>
-                    Folder 1
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis" onclick="showNotes(4)">
-                    <i class="bi bi-folder2 me-3"></i>
-                    Folder 2
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis" onclick="showNotes(5)">
-                    <i class="bi bi-folder2 me-3"></i>
-                    Folder 3
-                </a>
-            </li>
-            <!-- Add more folders as needed -->
-        </ul>
+    <!-- Folder 1 -->
+    <div class="tab-pane fade nocursor show active" role="tabpanel" tabindex="0" aria-labelledby="listGroup1-tab"
+        id="listGroup1" role="tablist">
 
-        <!-- List of Notes -->
-        <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary border-end" id="listBar">
-            <div class="d-flex justify-content-between border-bottom">
-                <a href="#" class="d-flex align-items-center p-3 link-body-emphasis text-decoration-none"
-                    style="pointer-events: none; cursor: default;">
-                    <i class="bi bi-journal me-2"></i>
-                    <span class="fs-5 fw-semibold">Notes List</span>
-                </a>
-                <button class="btn my-3 mx-3 shadow-sm" id="newNoteBtn" type="submit"><i
-                        class="bi bi-file-earmark-plus"></i></button>
+        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+            data-bs-target="#note1-folder1" aria-controls="note1-folder1" aria-selected="false">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">github command-line</strong>
+                <small>Wed</small>
             </div>
-
-            <!-- Tab Content for Notes -->
-            <div class="tab-content" id="notesTabContent">
-                <!-- Content for Folder 1 -->
-                <div class="tab-pane fade show active" id="folder1Notes" role="tabpanel" aria-labelledby="folder1Tab"
-                    tabindex="0">
-                    <!-- Adjust the content accordingly -->
-                    <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" role="tab"
-                        aria-selected="true">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 1</strong>
-                            <small>Wed</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 1</div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" role="tab">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 2</strong>
-                            <small>Tues</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 2</div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" role="tab">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 3</strong>
-                            <small>Mon</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 3</div>
-                    </a>
-                </div>
-
-                <!-- Content for Folder 2 -->
-                <div class="tab-pane fade" id="folder2Notes" role="tabpanel" aria-labelledby="folder2Tab" tabindex="0">
-                    <!-- Add content for Folder 2 -->
-                    <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" role="tab"
-                        aria-selected="true">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 1</strong>
-                            <small>Wed</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 1</div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" role="tab">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 2</strong>
-                            <small>Tues</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 2</div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" role="tab">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 3</strong>
-                            <small>Mon</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 3</div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" role="tab">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                            <strong class="mb-1">Note Title 4</strong>
-                            <small>Fri</small>
-                        </div>
-                        <div class="col-10 mb-1 small">Content for Note 4</div>
-                    </a>
-                </div>
-
-                <!-- Content for Folder 3 -->
-                <div class="tab-pane fade" id="folder3Notes" role="tabpanel" aria-labelledby="folder3Tab" tabindex="0">
-                    <!-- Add content for Folder 3 -->
-                </div>
-                <!-- Add more tab-panes for other folders -->
-            </div>
+            <div class="col-10 mb-1 small">Clone ...</div>
         </div>
+
+        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+            data-bs-target="#note2-folder1" aria-controls="note2-folder1" aria-selected="false" tabindex="-1">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">Insert title here</strong>
+                <small>Tues</small>
+            </div>
+            <div class="col-10 mb-1 small">Content here</div>
+        </div>
+
+        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+            data-bs-target="#note3-folder1" aria-controls="note3-folder1" aria-selected="false" tabindex="-1">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">Insert title here</strong>
+                <small>Mon</small>
+            </div>
+            <div class="col-10 mb-1 small">Content here</div>
+        </div>
+    </div>
+
+    <!-- Folder 2 -->
+    <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup2-tab" id="listGroup2">
+
+        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+            data-bs-target="#note1-folder2" aria-controls="note3-folder1" aria-selected="false" tabindex="-1">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">Họp Nhóm Proiect XYZ</strong>
+                <small>Wed</small>
+            </div>
+            <div class="col-10 mb-1 small">Hôm nay, chúng ta ...</div>
+        </div>
+    </div>
+    <!-- Folder 3 -->
+    <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup3-tab" id="listGroup3">
+
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Function to show notes based on the selected folder
-        function showNotes(noteCount) {
-            // Reset active class for all folder tabs
-            document.querySelectorAll('#folderList .nav-link').forEach(function (el) {
-                el.classList.remove('active');
-            });
-
-            // Activate the clicked folder tab
-            event.target.classList.add('active');
-
-            // Hide all notes tab-panes
-            document.querySelectorAll('#notesTabContent .tab-pane').forEach(function (el) {
-                el.classList.remove('show', 'active');
-            });
-
-            // Show the corresponding notes tab-pane
-            document.getElementById('folder1Notes').classList.add('show', 'active'); // Defaulting to Folder 1
-
-            // Adjust this part based on your actual folder structure
-            if (noteCount === 4) {
-                document.getElementById('folder2Notes').classList.add('show', 'active');
-            } else if (noteCount === 5) {
-                document.getElementById('folder3Notes').classList.add('show', 'active');
-            }
-            // Add more conditions for other folders as needed
-        }
-    </script>
 </body>
 
 </html>
