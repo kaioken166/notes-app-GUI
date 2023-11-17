@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Notes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+    <link rel="shortcut icon" type="image/x-icon" href="font/bookmark-star.svg" />
+</head>
+
+<body style="height: 100%">
+    <div class="d-flex flex-nowrap" style="height: 100%">
+
+        <!-- Sidebar section -->
+        <div class="flex-shrink-0 p-3 border-end" id="left-sidebar">
+
+            <a href="#"
+                class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+                <i class="bi bi-pen me-2"></i>
+                <span class="fs-5 fw-semibold">Notes</span>
+            </a>
+            <div class="input-group flex-nowrap pb-3 mb-3 border-bottom">
+                <span class="input-group-text shadow-sm"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control shadow-sm" placeholder="Search" aria-label="SearchInput"
+                    aria-describedby="addon-wrapping">
+            </div>
+
+            <!-- Folder section -->
+            <ul class="nav nav-pills flex-column border-bottom scrollarea mb-3" aria-orientation="vertical"
+                role="tablist" style="height: 77%">
+                <li class="nav-item nav-link active link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
+                    data-bs-target="#listGroup1" aria-controls="listGroup1" aria-selected="true">
+                    <i class="bi bi-folder2 me-3"></i>
+                    Folder 1
+                </li>
+                <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
+                    data-bs-target="#listGroup2" aria-controls="listGroup2" aria-selected="false" tabindex="-1">
+                    <i class="bi bi-folder2 me-3"></i>
+                    Folder 2
+                </li>
+
+                <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
+                    data-bs-target="#listGroup3" aria-controls="listGroup3" aria-selected="false" tabindex="-1">
+                    <i class="bi bi-folder2 me-3"></i>
+                    Folder 3
+                </li>
+            </ul>
+            <!-- profile -->
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <strong>Profile</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- List items section -->
+        <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary border-end" id="listBar">
+            <div class="d-flex justify-content-between">
+                <a href="#" class="d-flex align-items-center p-3 link-body-emphasis text-decoration-none nocursor">
+                    <i class="bi bi-journal me-2"></i>
+                    <span class="fs-5 fw-semibold">Notes List</span>
+                </a>
+                <button class="btn my-3 mx-3 shadow-sm" id="newNoteBtn" type="submit"><i
+                        class="bi bi-file-earmark-plus"></i></button>
+
+            </div>
+
+            <!-- List items -->
+            <div class="list-group list-group-flush scrollarea tab-content">
+
+                <!-- Folder 1 -->
+                <div class="tab-pane fade nocursor show active" role="tabpanel" tabindex="0"
+                    aria-labelledby="listGroup1-tab" id="listGroup1" role="tablist">
+
+                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+                        data-bs-target="#note1-folder1" aria-controls="note1-folder1" aria-selected="false">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">github command-line</strong>
+                            <small>Wed</small>
+                        </div>
+                        <div class="col-10 mb-1 small">Clone ...</div>
+                    </div>
+
+                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+                        data-bs-target="#note2-folder1" aria-controls="note2-folder1" aria-selected="false"
+                        tabindex="-1">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Insert title here</strong>
+                            <small>Tues</small>
+                        </div>
+                        <div class="col-10 mb-1 small">Content here</div>
+                    </div>
+
+                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+                        data-bs-target="#note3-folder1" aria-controls="note3-folder1" aria-selected="false"
+                        tabindex="-1">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Insert title here</strong>
+                            <small>Mon</small>
+                        </div>
+                        <div class="col-10 mb-1 small">Content here</div>
+                    </div>
+                </div>
+
+                <!-- Folder 2 -->
+                <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup2-tab"
+                    id="listGroup2">
+
+                    <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
+                        data-bs-target="#note1-folder2" aria-controls="note3-folder1" aria-selected="false"
+                        tabindex="-1">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">Họp Nhóm Proiect XYZ</strong>
+                            <small>Wed</small>
+                        </div>
+                        <div class="col-10 mb-1 small">Hôm nay, chúng ta ...</div>
+                    </div>
+                </div>
+                <!-- Folder 3 -->
+                <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup3-tab"
+                    id="listGroup3">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Content section -->
+        <div class="d-flex flex-column flex-grow-1 position-relative tab-content" id="mainContent">
+
+            <!-- Trống -->
+            <div class="d-flex justify-content-center position-absolute top-50 start-50 translate-middle" id="note0">
+                <div class="align-self-center text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#bdbdbd"
+                        class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                        <path
+                            d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                    </svg>
+                    <h1 class="display-5 fw-bold" style="color: #bdbdbd;">Select a note to view</h1>
+                    <div class="mx-auto">
+                        <p class="lead mb-4" style="color: #bdbdbd;">Choose a note from a list to view its contents, or
+                            create a new note to add to your collection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- div chứa thông nội dung -->
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-folder1" role="tabpanel" tabindex="0">
+
+                <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+                <div class="d-flex justify-content-between">
+                    <input type="text" class="form-control form-control-lg no-border" id="title1-folder1" placeholder=""
+                        value="github command-line">
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note1-folder1" type="button"><i
+                            class="bi bi-trash3"></i></button>
+                </div>
+                <hr class="mx-3" style="border-width: 0.5px;">
+                <!-- Ngày tháng -->
+                <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Friday 17 November 2023 12:13
+                </h6>
+                <!-- Thuộc folder ? -->
+                <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
+                <!-- Nội dung ghi chú -->
+                <textarea class="form-control flex-grow-1 no-border p-3" placeholder=""
+                    id="content1-folder1">Clone a Specific Branch: git clone -b</textarea>
+            </div>
+
+            <!-- div chứa thông nội dung -->
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note2-folder1" role="tabpanel" tabindex="0">
+
+                <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+                <div class="d-flex justify-content-between">
+                    <input type="text" class="form-control form-control-lg no-border" id="title2-folder1" placeholder=""
+                        value="Insert title here">
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note2-folder1" type="button"><i
+                            class="bi bi-trash3"></i></button>
+                </div>
+                <hr class="mx-3" style="border-width: 0.5px;">
+                <!-- Ngày tháng -->
+                <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Tuesday 12 November 2023 12:13
+                </h6>
+                <!-- Thuộc folder ? -->
+                <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
+                <!-- Nội dung ghi chú -->
+                <textarea class="form-control no-border p-3" placeholder=""
+                    id="content2-folder1">Insert data from database here</textarea>
+            </div>
+
+            <!-- div chứa thông nội dung -->
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note3-folder1" role="tabpanel" tabindex="0">
+
+                <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+                <div class="d-flex justify-content-between">
+                    <input type="text" class="form-control form-control-lg no-border" id="title2-folder1"
+                        placeholder="Untitled">
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note3-folder1" type="button"><i
+                            class="bi bi-trash3"></i></button>
+                </div>
+                <hr class="mx-3" style="border-width: 0.5px;">
+                <!-- Ngày tháng -->
+                <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Monday 11 November 2023 12:13
+                </h6>
+                <!-- Thuộc folder ? -->
+                <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
+                <!-- Nội dung ghi chú -->
+                <textarea class="form-control no-border p-3" placeholder="" id="content3-folder1"></textarea>
+            </div>
+
+
+            <!-- div chứa thông nội dung1 folder 2-->
+            <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-folder2" role="tabpanel" tabindex="0">
+
+                <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+                <div class="d-flex justify-content-between">
+                    <input type="text" class="form-control form-control-lg no-border" id="title2-folder1" placeholder=""
+                        value="Họp Nhóm Proiect XYZ">
+                    <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note1-folder2" type="button"><i
+                            class="bi bi-trash3"></i></button>
+                </div>
+                <hr class="mx-3" style="border-width: 0.5px;">
+                <!-- Ngày tháng -->
+                <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Wednesday 15 October 2023 12:13
+                </h6>
+                <!-- Thuộc folder ? -->
+                <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 2</h6>
+                <!-- Nội dung ghi chú -->
+                <textarea class="form-control no-border p-3" placeholder=""
+                    id="content1-folder2">Hôm nay, chúng ta đã thảo luận về tiến độ dự án, đặt ra các mục tiêu cụ thể cho tuần tới và phân công công việc chi tiết. Cần tất cả mọi người chuẩn bị báo cáo tiến độ cho cuộc họp tiếp theo.</textarea>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js" async defer></script>
+    <script src="js/bootstrap.bundle.min.js" async defer></script>
+</body>
+
+</html>

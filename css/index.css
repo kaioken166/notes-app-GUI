@@ -1,0 +1,106 @@
+html,
+body {
+    height: 100%;
+}
+
+main {
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.nocursor {
+    cursor: default;
+}
+
+#left-sidebar {
+    height: inherit;
+    width: 280px;
+    background-color: #f0f0f0;
+}
+
+#listBar {
+    width: 380px;
+    background-color: #fcfcfc !important;
+
+}
+
+.list-group-item {
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.list-group-item.active {
+    background-color: #14213D !important;
+    border-color: #14213D !important;
+}
+
+.bi {
+    font-size: 1.25rem;
+}
+
+#newNoteBtn {
+    --bs-btn-bg: #ffc972 !important;
+    --bs-btn-hover-bg: #000000 !important;
+    color: #FFFFFF;
+}
+
+#mainContent {
+    background-color: #ffffff;
+}
+
+.nav-link {
+    display: flex !important;
+    align-items: center !important;
+
+    &:hover {
+        background-color: #ffffff !important;
+        /* color: #000000 !important; */
+    }
+}
+
+.nav-link.active {
+    background-color: #ffc972 !important;
+    border-color: transparent !important;
+    /* color: #FFFFFF !important; */
+    box-shadow: var(--bs-box-shadow-sm) !important;
+}
+
+.nav-item {
+    margin-bottom: .3rem !important;
+}
+
+.dropdown-toggle {
+    outline: 0;
+}
+
+.scrollarea {
+    overflow-y: auto;
+}
+
+.list-group-item {
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+.no-border {
+    border: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.form-control-lg {
+    font-size: 2.5rem !important;
+}
+
+.trash-btn {
+    --bs-btn-bg: #14213D !important;
+    --bs-btn-hover-bg: #ff5050 !important;
+    color: #FFFFFF !important;
+}
+
+textarea {
+    resize: none !important;
+    height: 74% !important;
+}
