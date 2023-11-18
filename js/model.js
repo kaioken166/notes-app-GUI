@@ -47,10 +47,7 @@ function renderFolders() {
 
     folderData.forEach((folder, index) => {
         const folderItem = document.createElement('li');
-        folderItem.classList.add('nav-item', 'nav-link', 'link-body-emphasis', 'nocursor');
-        if (folder.name == 'Folder 1') {
-            folderItem.classList.add('active');
-        }
+        folderItem.classList.add('nav-item', 'nav-link', 'link-body-emphasis', 'justify-content-between');
         folderItem.setAttribute('role', 'tab');
         folderItem.setAttribute('data-bs-toggle', 'pill');
         folderItem.setAttribute('data-bs-target', `#${folder.id}`);
@@ -59,12 +56,22 @@ function renderFolders() {
         folderItem.setAttribute('tabindex', -1);
 
         folderItem.innerHTML = `
+        <div>
             <i class="bi bi-folder2 me-3"></i>
             ${folder.name}
+        </div>
+        <div class="dropdown-center">
+            <button class="btn dropdown-toggle" data-bs-toggle="dropdown"></button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" aria-controls="rename-${folder.id}">Rename</button></li>
+                <li><button class="dropdown-item" aria-controls="delete-${folder.id}">Delete</button></li>
+            </ul>            
+        </div>
         `;
 
         folderList.appendChild(folderItem);
     });
+    folderList.firstElementChild.classList.add('active');
 }
 
 

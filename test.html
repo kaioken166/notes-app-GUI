@@ -13,52 +13,93 @@
 
 <body>
     <!-- Folder 1 -->
-    <div class="tab-pane fade nocursor show active" role="tabpanel" tabindex="0" aria-labelledby="listGroup1-tab"
-        id="listGroup1" role="tablist">
+    <div class="d-flex flex-column flex-shrink-0 p-3 border-end" id="left-sidebar">
 
-        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-            data-bs-target="#note1-folder1" aria-controls="note1-folder1" aria-selected="false">
-            <div class="d-flex w-100 align-items-center justify-content-between">
-                <strong class="mb-1">github command-line</strong>
-                <small>Wed</small>
-            </div>
-            <div class="col-10 mb-1 small">Clone ...</div>
+        <div class="d-flex justify-content-between pb-3 mb-3 border-bottom">
+            <a href="/index.html" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+                <i class="bi bi-pen me-2"></i>
+                <span class="fs-5 fw-semibold">Notes</span>
+            </a>
+            <button class="btn shadow-sm" id="newFolderBtn" type="submit"><i class="bi bi-folder-plus"></i></button>
         </div>
 
-        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-            data-bs-target="#note2-folder1" aria-controls="note2-folder1" aria-selected="false" tabindex="-1">
-            <div class="d-flex w-100 align-items-center justify-content-between">
-                <strong class="mb-1">Insert title here</strong>
-                <small>Tues</small>
-            </div>
-            <div class="col-10 mb-1 small">Content here</div>
+
+        <!-- Folder section -->
+        <ul class="nav nav-pills flex-shrink-1 d-flex flex-column scrollarea mb-3" id="folderList"
+            aria-orientation="vertical" role="tablist" style="height: 100%;">
+
+            <!-- Đổ data vào đây -->
+
+            <li class="nav-item nav-link link-body-emphasis nocursor active" role="tab" data-bs-toggle="pill"
+                data-bs-target="#listGroup1" aria-controls="listGroup1" aria-selected="true" tabindex="-1">
+                <i class="bi bi-folder2 me-3"></i>
+                Folder 1
+                <ul class="dropdown-menu d-block position-static mx-0 shadow w-220px" data-bs-theme="light">
+                    <li>
+                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                        <svg class="bi" width="16" height="16"><use xlink:href="#files"></use></svg>
+                        Documents
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                        <svg class="bi" width="16" height="16"><use xlink:href="#image-fill"></use></svg>
+                        Photos
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                        <svg class="bi" width="16" height="16"><use xlink:href="#film"></use></svg>
+                        Movies
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                        <svg class="bi" width="16" height="16"><use xlink:href="#music-note-beamed"></use></svg>
+                        Music
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+                        <svg class="bi" width="16" height="16"><use xlink:href="#joystick"></use></svg>
+                        Games
+                      </a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                      <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center" href="#">
+                        <svg class="bi" width="16" height="16"><use xlink:href="#trash"></use></svg>
+                        Trash
+                      </a>
+                    </li>
+                  </ul>
+            </li>
+            <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
+                data-bs-target="#listGroup2" aria-controls="listGroup2" aria-selected="false" tabindex="-1">
+                <i class="bi bi-folder2 me-3"></i>
+                Folder 2
+            </li>
+            <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
+                data-bs-target="#listGroup3" aria-controls="listGroup3" aria-selected="false" tabindex="-1">
+                <i class="bi bi-folder2 me-3"></i>
+                Folder 3
+            </li>
+        </ul>
+        <!-- profile -->
+        <div class="dropdown mt-auto flex-shrink-1 border-top py-3">
+            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <strong>Profile</strong>
+            </a>
+            <ul class="dropdown-menu text-small shadow">
+
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
         </div>
-
-        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-            data-bs-target="#note3-folder1" aria-controls="note3-folder1" aria-selected="false" tabindex="-1">
-            <div class="d-flex w-100 align-items-center justify-content-between">
-                <strong class="mb-1">Insert title here</strong>
-                <small>Mon</small>
-            </div>
-            <div class="col-10 mb-1 small">Content here</div>
-        </div>
-    </div>
-
-    <!-- Folder 2 -->
-    <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup2-tab" id="listGroup2">
-
-        <div class="list-group-item list-group-item-action py-3 lh-sm" role="tab" data-bs-toggle="pill"
-            data-bs-target="#note1-folder2" aria-controls="note3-folder1" aria-selected="false" tabindex="-1">
-            <div class="d-flex w-100 align-items-center justify-content-between">
-                <strong class="mb-1">Họp Nhóm Proiect XYZ</strong>
-                <small>Wed</small>
-            </div>
-            <div class="col-10 mb-1 small">Hôm nay, chúng ta ...</div>
-        </div>
-    </div>
-    <!-- Folder 3 -->
-    <div class="tab-pane fade nocursor" role="tabpanel" tabindex="0" aria-labelledby="listGroup3-tab" id="listGroup3">
-
     </div>
 
     <!-- Bootstrap JS -->

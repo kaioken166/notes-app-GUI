@@ -103,6 +103,10 @@ main {
     margin-bottom: .3rem !important;
 }
 
+.nav-item:hover .dropdown-center .btn{
+    display: block;
+} 
+
 .dropdown-toggle {
     outline: 0;
 }
@@ -152,3 +156,18 @@ textarea {
     resize: none !important;
     height: 74% !important;
 }
+
+
+
+.dropdown-center .btn {
+    display: none;
+
+    --bs-btn-bg: transparent !important;
+    --bs-btn-padding-x: 0 !important;
+    --bs-btn-padding-y: 0 !important;
+
+    &:focus {
+        border-color: transparent !important;
+    }
+}
+
