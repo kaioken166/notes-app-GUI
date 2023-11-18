@@ -13,16 +13,6 @@ var folders = [
                 title: "github command-line",
                 date: "Wed",
                 content: "Clone ..."
-            },
-            {
-                title: "Insert title here",
-                date: "Tues",
-                content: "Content here"
-            },
-            {
-                title: "Insert title here",
-                date: "Mon",
-                content: "Content here"
             }
         ]
     },
@@ -83,7 +73,7 @@ function renderNoteFolders() {
 
     folders.forEach(function (folder) {
         var folderDiv = document.createElement('div');
-        folderDiv.classList.add('tab-pane', 'fade', 'nocursor');
+        folderDiv.classList.add('tab-pane', 'fade', 'nocursor', 'notefolder');
         folderDiv.setAttribute('role', 'tabpanel');
         folderDiv.setAttribute('tabindex', '0');
         folderDiv.setAttribute('aria-labelledby', folder.id + '-tab');
@@ -130,8 +120,59 @@ function renderNoteFolders() {
     addEventListenersRemove();
 }
 
+// Dữ liệu ghi chú
+const noteData = [
+    {
+        id: 'note1-listGroup1',
+        title: 'github command-line',
+        date: 'Friday 17 November 2023 12:13',
+        folder: 'Folder 1',
+        content: 'Clone a Specific Branch: git clone -b',
+    },
+    {
+        id: 'note1-listGroup2',
+        title: 'Họp Nhóm Proiect XYZ',
+        date: 'Wednesday 17 November 2023 12:13',
+        folder: 'Folder 2',
+        content: 'Hôm nay ...',
+    },
+];
+
+// Tạo phần tử HTML cho mỗi ghi chú và thêm vào DOM
+function renderNotes() {
+    const container = document.getElementById('mainContent');
+
+    noteData.forEach((note) => {
+        console.log(1)
+        const noteElement = document.createElement('div');
+        noteElement.classList.add('p-3', 'flex-column', 'flex-grow-1', 'tab-pane', 'fade');
+        noteElement.id = note.id;
+        noteElement.setAttribute('role', 'tabpanel');
+        noteElement.setAttribute('tabindex', '0');
+
+        noteElement.innerHTML = `
+        <div class="d-flex justify-content-between">
+            <input type="text" class="form-control form-control-lg no-border" id="title-${note.id}"
+            placeholder="" value="${note.title}">
+            <button class="btn my-3 shadow-sm save-btn me-2" id="save-${note.id}" type="button"><i
+                class="bi bi-floppy"></i></button>
+            <button class="btn my-3 shadow-sm trash-btn me-2" id="delete-${note.id}" type="button"><i
+                class="bi bi-trash3"></i></button>
+        </div>
+        <hr class="mx-3" style="border-width: 0.5px;">
+        <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>${note.date}</h6>
+        <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i>${note.folder}</h6>
+        <textarea class="form-control flex-grow-1 no-border p-3" placeholder=""
+            id="content-${note.id}">${note.content}</textarea>
+    `;
+
+        container.appendChild(noteElement);
+    });
+}
+
 function onPageLoad() {
     renderFolders();
+    renderNotes();
     renderNoteFolders();
 }
 

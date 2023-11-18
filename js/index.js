@@ -30,17 +30,27 @@ links.forEach(function (link) {
     });
 });
 
-// remove empty content
-function addEventListenersRemove() {
-    const toggleableElements = document.getElementsByClassName('list-group-item');
+function hideRemovableElement() {
     const removableElement = document.getElementById('note0');
-
-    for (var i = 0; i < toggleableElements.length; i++) {
-        toggleableElements[i].addEventListener('click', function () {
-            removableElement.style.display = 'none';
-        });
+    if (removableElement) {
+        removableElement.style.display = 'none';
     }
 }
+
+// remove empty content
+function addEventListenersRemove() {
+    const noteCards = document.querySelectorAll('.list-group-item');
+
+    console.log(noteCards);
+
+    noteCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            hideRemovableElement();
+        });
+    });
+}
+
+
 
 // Add note GUI
 const addButton = document.getElementById('newNoteBtn');
@@ -75,6 +85,24 @@ function getCurrentDate() {
     const date = new Date();
     const options = { weekday: 'short' };
     return date.toLocaleDateString('en-US', options);
+}
+
+function getFormattedDateTime() {
+    const currentDate = new Date();
+
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const dayOfWeek = daysOfWeek[currentDate.getDay()];
+    const dayOfMonth = currentDate.getDate();
+    const month = monthsOfYear[currentDate.getMonth()];
+    const year = currentDate.getFullYear();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+
+    const formattedDateTime = `${dayOfWeek} ${dayOfMonth} ${month} ${year} ${hours}:${minutes}`;
+
+    return formattedDateTime;
 }
 
 function handleEdit(button) {
@@ -153,4 +181,34 @@ function addDivforContainsnote(listID) {
     folderDiv.setAttribute('id', listID);
 
     parentDiv.appendChild(folderDiv);
+}
+
+// Render một phần tử ghi chú dựa trên dữ liệu
+function renderNoteElement(note) {
+    const container = document.getElementById('mainContent');
+
+    const noteElement = document.createElement('div');
+    noteElement.classList.add('p-3', 'flex-column', 'flex-grow-1', 'tab-pane', 'fade', 'active', 'show');
+    noteElement.id = note.id;
+    noteElement.setAttribute('role', 'tabpanel');
+    noteElement.setAttribute('tabindex', '0');
+
+    noteElement.innerHTML = `
+    <div class="d-flex justify-content-between">
+      <input type="text" class="form-control form-control-lg no-border" id="title-${note.id}"
+        placeholder="" value="${note.title}">
+      <button class="btn my-3 shadow-sm save-btn me-2" id="save-${note.id}" type="button"><i
+          class="bi bi-floppy"></i></button>
+      <button class="btn my-3 shadow-sm trash-btn me-2" id="delete-${note.id}" type="button"><i
+          class="bi bi-trash3"></i></button>
+    </div>
+    <hr class="mx-3" style="border-width: 0.5px;">
+    <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>${note.date}</h6>
+    <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i>${note.folder}</h6>
+    <textarea class="form-control flex-grow-1 no-border p-3" placeholder=""
+      id="content-${note.id}">${note.content}</textarea>
+  `;
+
+    // container.innerHTML = ''; // Xóa nội dung cũ trong container
+    container.appendChild(noteElement);
 }

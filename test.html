@@ -2,108 +2,110 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
 
-    <title>Folder and Notes</title>
+  <title>Folder and Notes</title>
 </head>
 
 <body>
-    <!-- Folder 1 -->
-    <div class="d-flex flex-column flex-shrink-0 p-3 border-end" id="left-sidebar">
+  <!-- div chứa  nội dung1 folder 1 -->
+  <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-listGroup1" role="tabpanel" tabindex="0">
 
-        <div class="d-flex justify-content-between pb-3 mb-3 border-bottom">
-            <a href="/index.html" class="d-flex align-items-center link-body-emphasis text-decoration-none">
-                <i class="bi bi-pen me-2"></i>
-                <span class="fs-5 fw-semibold">Notes</span>
-            </a>
-            <button class="btn shadow-sm" id="newFolderBtn" type="submit"><i class="bi bi-folder-plus"></i></button>
-        </div>
-
-
-        <!-- Folder section -->
-        <ul class="nav nav-pills flex-shrink-1 d-flex flex-column scrollarea mb-3" id="folderList"
-            aria-orientation="vertical" role="tablist" style="height: 100%;">
-
-            <!-- Đổ data vào đây -->
-
-            <li class="nav-item nav-link link-body-emphasis nocursor active" role="tab" data-bs-toggle="pill"
-                data-bs-target="#listGroup1" aria-controls="listGroup1" aria-selected="true" tabindex="-1">
-                <i class="bi bi-folder2 me-3"></i>
-                Folder 1
-                <ul class="dropdown-menu d-block position-static mx-0 shadow w-220px" data-bs-theme="light">
-                    <li>
-                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                        <svg class="bi" width="16" height="16"><use xlink:href="#files"></use></svg>
-                        Documents
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                        <svg class="bi" width="16" height="16"><use xlink:href="#image-fill"></use></svg>
-                        Photos
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                        <svg class="bi" width="16" height="16"><use xlink:href="#film"></use></svg>
-                        Movies
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                        <svg class="bi" width="16" height="16"><use xlink:href="#music-note-beamed"></use></svg>
-                        Music
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
-                        <svg class="bi" width="16" height="16"><use xlink:href="#joystick"></use></svg>
-                        Games
-                      </a>
-                    </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                      <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center" href="#">
-                        <svg class="bi" width="16" height="16"><use xlink:href="#trash"></use></svg>
-                        Trash
-                      </a>
-                    </li>
-                  </ul>
-            </li>
-            <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
-                data-bs-target="#listGroup2" aria-controls="listGroup2" aria-selected="false" tabindex="-1">
-                <i class="bi bi-folder2 me-3"></i>
-                Folder 2
-            </li>
-            <li class="nav-item nav-link link-body-emphasis nocursor" role="tab" data-bs-toggle="pill"
-                data-bs-target="#listGroup3" aria-controls="listGroup3" aria-selected="false" tabindex="-1">
-                <i class="bi bi-folder2 me-3"></i>
-                Folder 3
-            </li>
-        </ul>
-        <!-- profile -->
-        <div class="dropdown mt-auto flex-shrink-1 border-top py-3">
-            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <strong>Profile</strong>
-            </a>
-            <ul class="dropdown-menu text-small shadow">
-
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-        </div>
+    <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+    <div class="d-flex justify-content-between">
+      <input type="text" class="form-control form-control-lg no-border" id="title1-listGroup1" placeholder=""
+        value="github command-line">
+      <button class="btn my-3 shadow-sm save-btn me-2" id="save-note1-listGroup1" type="button"><i
+          class="bi bi-floppy"></i></button>
+      <button class="btn my-3 shadow-sm trash-btn me-2" id="delete-note1-listGroup1" type="button"><i
+          class="bi bi-trash3"></i></button>
     </div>
+    <hr class="mx-3" style="border-width: 0.5px;">
+    <!-- Ngày tháng -->
+    <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Friday 17 November 2023 12:13
+    </h6>
+    <!-- Thuộc folder ? -->
+    <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
+    <!-- Nội dung ghi chú -->
+    <textarea class="form-control flex-grow-1 no-border p-3" placeholder=""
+      id="content1-listGroup1">Clone a Specific Branch: git clone -b</textarea>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- div chứa  nội dung2 folder 1 -->
+  <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note2-listGroup1" role="tabpanel" tabindex="0">
+
+    <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+    <div class="d-flex justify-content-between">
+      <input type="text" class="form-control form-control-lg no-border" id="title2-listGroup1" placeholder=""
+        value="Insert title here">
+      <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note2-listGroup1" type="button"><i
+          class="bi bi-trash3"></i></button>
+    </div>
+    <hr class="mx-3" style="border-width: 0.5px;">
+    <!-- Ngày tháng -->
+    <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Tuesday 12 November 2023 12:13
+    </h6>
+    <!-- Thuộc folder ? -->
+    <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
+    <!-- Nội dung ghi chú -->
+    <textarea class="form-control no-border p-3" placeholder=""
+      id="content2-listGroup1">Insert data from database here</textarea>
+  </div>
+
+  <!-- div chứa  nội dung3 folder 1 -->
+  <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note3-listGroup1" role="tabpanel" tabindex="0">
+
+    <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+    <div class="d-flex justify-content-between">
+      <input type="text" class="form-control form-control-lg no-border" id="title2-listGroup1" placeholder="Untitled">
+      <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note3-listGroup1" type="button"><i
+          class="bi bi-trash3"></i></button>
+    </div>
+    <hr class="mx-3" style="border-width: 0.5px;">
+    <!-- Ngày tháng -->
+    <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Monday 11 November 2023 12:13
+    </h6>
+    <!-- Thuộc folder ? -->
+    <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 1</h6>
+    <!-- Nội dung ghi chú -->
+    <textarea class="form-control no-border p-3" placeholder="" id="content3-listGroup1"></textarea>
+  </div>
+
+
+  <!-- div chứa  nội dung1 folder 2-->
+  <div class="p-3  flex-column flex-grow-1 tab-pane fade" id="note1-listGroup2" role="tabpanel" tabindex="0">
+
+    <!-- Nếu có value thì thêm vào thuộc tính value="Tiêu đề" -->
+    <div class="d-flex justify-content-between">
+      <input type="text" class="form-control form-control-lg no-border" id="title1-listGroup2" placeholder=""
+        value="Họp Nhóm Proiect XYZ">
+      <button class="btn my-3 mx-3 shadow-sm trash-btn" id="delete-note1-listGroup2" type="button"><i
+          class="bi bi-trash3"></i></button>
+    </div>
+    <hr class="mx-3" style="border-width: 0.5px;">
+    <!-- Ngày tháng -->
+    <h6 class="mx-3 pb-3 border-bottom"><i class="bi bi-calendar3 me-2"></i>Wednesday 15 October 2023 12:13
+    </h6>
+    <!-- Thuộc folder ? -->
+    <h6 class="mx-3 mt-3 pb-3 border-bottom"><i class="bi bi-folder2-open me-2"></i></i>Folder 2</h6>
+    <!-- Nội dung ghi chú -->
+    <textarea class="form-control no-border p-3" placeholder=""
+      id="content1-listGroup2">Hôm nay, chúng ta đã thảo luận về tiến độ dự án, đặt ra các mục tiêu cụ thể cho tuần tới và phân công công việc chi tiết. Cần tất cả mọi người chuẩn bị báo cáo tiến độ cho cuộc họp tiếp theo.</textarea>
+  </div>
+
+
+  <div class="list-group-item list-group-item-action py-3 lh-sm active" role="tab" data-bs-toggle="pill"
+    data-bs-target="#note1-listGroup1" aria-controls="note1-listGroup1" aria-selected="true">
+    <div class="d-flex w-100 align-items-center justify-content-between"><strong class="mb-1">github
+        command-line</strong><small>Wed</small></div>
+    <div class="col-10 mb-1 small">Clone ...</div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
