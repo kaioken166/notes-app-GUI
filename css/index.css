@@ -157,8 +157,6 @@ textarea {
     height: 74% !important;
 }
 
-
-
 .dropdown-center .btn {
     display: none;
 
@@ -171,3 +169,17 @@ textarea {
     }
 }
 
+.dropdown-menu .rename-btn:hover {
+    background-color: #14213D !important;
+    color: #FFFFFF !important;
+}
+
+.dropdown-menu .delete-btn:hover {
+    background-color: #ff5050 !important;
+    color: #FFFFFF !important;
+}
+
+.form-control-plaintext {
+    width: 125px !important;
+    padding: 0 !important;
+}

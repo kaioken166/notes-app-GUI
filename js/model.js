@@ -56,15 +56,16 @@ function renderFolders() {
         folderItem.setAttribute('tabindex', -1);
 
         folderItem.innerHTML = `
-        <div>
+        <div class="d-flex justify-content-start">
             <i class="bi bi-folder2 me-3"></i>
-            ${folder.name}
+            <input type="text" readonly="true" class="form-control-plaintext no-border" data-input-id="name-${folder.id}" id="name-${folder.id}" value="${folder.name}">
         </div>
         <div class="dropdown-center">
             <button class="btn dropdown-toggle" data-bs-toggle="dropdown"></button>
             <ul class="dropdown-menu">
-                <li><button class="dropdown-item" aria-controls="rename-${folder.id}">Rename</button></li>
-                <li><button class="dropdown-item" aria-controls="delete-${folder.id}">Delete</button></li>
+                <button type="button" class="dropdown-item rename-btn" data-input-id="name-${folder.id}" aria-controls="rename-${folder.id}" 
+                    onclick="handleEdit(this)">Rename</button>
+                <button type="button" class="dropdown-item delete-btn" aria-controls="delete-${folder.id}">Delete</button>
             </ul>            
         </div>
         `;
@@ -129,8 +130,8 @@ function renderNoteFolders() {
     addEventListenersRemove();
 }
 
-
 function onPageLoad() {
     renderFolders();
     renderNoteFolders();
 }
+
